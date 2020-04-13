@@ -10,6 +10,7 @@ from django.core.paginator import Paginator
 from .models import Post
 import requests
 import json
+import requests
 
 # Create your views here.
 
@@ -61,7 +62,18 @@ class PostView(ListView):
         # context['description'] = context['description'][300:]+'<span id="dots">...</span>'+context['description'][301:]
         # print(context['description'])
         context['world_info'] = koronaInfo()
+        context['world_news'] = getWorldNews()
+
         return context
+
+
+def getWorldNews():
+    url = ('http://newsapi.org/v2/top-headlines?'
+           'language=en&q=corona&'
+           'apiKey=6a9f67a44df84a3faa38a4d1afce3aaf')
+    response = requests.get(url)
+    return response.json().get('articles', [])
+
     
 def koronaInfo():
     response = requests.get("https://corona.lmao.ninja/countries?fbclid=IwAR361IpY2mbXU7twwKwwiYX3u6vMiDj3IGzgtNIFQhC0pI0UzaTS_Hq1Gh4")

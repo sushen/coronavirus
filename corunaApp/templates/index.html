@@ -189,6 +189,30 @@
 
 				<h2 class="major" style="margin-top:10px">করোনা সংবাদ</h2>
 
+				<div style="height:500px ; background:white; margin-bottom:40px">
+					<center><h2 class="black_text">World News</h2></center>
+					<div class="col s12 m8 " style="height: 440px; overflow: scroll">
+						<table>
+							<tbody>
+								{% if world_news %}
+									{% for data in world_news %}
+									<tr class="row_separator">
+										<td class="black_text">
+											<span>{{ data.publishedAt }}</span>
+											<p><a href="{{ data.url }}">
+												{{data.title}}
+											</a></p>
+										</td>
+									</tr>
+									{% endfor %}
+								{% else %}
+									<p>none</p>
+								{% endif %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+
 				<div style="height:500px ; background:white">
 					<center>
 					<img height="46"
