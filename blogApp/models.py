@@ -50,6 +50,7 @@ class Tag(models.Model):
         return self.tag_name
 
 class Comment(models.Model):
+    comment_of = models.ForeignKey(Post, on_delete=models.CASCADE)
     created_by = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     description = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)
