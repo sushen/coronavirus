@@ -30,7 +30,7 @@ def emailView(request):
                 msg = 'Name : '+name + '\nEmail : ' + email + '\nMessage : '+message
 
                 try:
-                    send_mail(name, msg, email, ['jubel8180@gmail.com','sushenbiswasaga@gmail.com'],fail_silently=False)
+                    send_mail(name, msg, email, ['tawhidularefin530@gmail.com','jubel8180@gmail.com','sushenbiswasaga@gmail.com'],fail_silently=False)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 form = ContactForm()

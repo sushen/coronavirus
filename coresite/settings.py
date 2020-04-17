@@ -33,7 +33,7 @@ SECRET_KEY = '2*ky6&fzf&(1ys1g=hzoz8w!^v)z7ig4td$1@qdvz^(#eigb9o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['coronavirus-stagibg.herokuapp.com', 'coronavirus1314.herokuapp.com', 'coronovirus19.herokuapp.com', 'coronaproject.herokuapp.com', 'coronavirusbd.herokuapp.com']
 
 
 # Application definition
