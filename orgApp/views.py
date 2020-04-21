@@ -37,4 +37,3 @@ def self_org(request: HttpRequest):
         context['errorMsg'] = 'Not new user'
         return render(request, 'orgApp/selfOrg.html', context)
 
-

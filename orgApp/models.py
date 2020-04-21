@@ -2,6 +2,7 @@ from django.db import models
 from userApp.models import UserProfile
 
 
+
 class Category(models.Model):
     created_date = models.DateTimeField(auto_now_add=True, verbose_name="Created at")
     updated_date = models.DateTimeField(auto_now=True, verbose_name="Updated at")
@@ -27,7 +28,6 @@ class Organisation(models.Model):
     email = models.EmailField(max_length=255, unique=True)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
-
     objects = models.QuerySet()
 
     def __str__(self):
@@ -38,10 +38,10 @@ class orgDetail(models.Model):
     image = models.ImageField()
     logo = models.ImageField()
     description = models.TextField()
-    facebook_url = models.TextField()
-    twitter_url = models.TextField()
-    youtube_url = models.TextField()
-    website_url = models.TextField()
+    facebook_url = models.URLField()
+    twitter_url = models.URLField()
+    youtube_url = models.URLField()
+    website_url = models.URLField()
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
@@ -61,7 +61,6 @@ class orgProject(models.Model):
 
     def __str__(self):
         return self.name
-
 
 
 

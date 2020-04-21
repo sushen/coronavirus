@@ -6,3 +6,4 @@ app_name = "orgApplication"
 urlpatterns = [
     path("", views.self_org, name='self_org'),
 ]
+
