@@ -18,3 +18,12 @@
     top: 0;
     box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
   }
+
+  .black_text {
+    color: black !important;
+  }
+
+  .row_separator {
+    border-bottom: 1px solid gray !important;
+    border-top: 1px solid gray !important;
+  }​

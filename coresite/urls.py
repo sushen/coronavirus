@@ -21,11 +21,12 @@ from django.views.generic import RedirectView
 # for static
 from django.conf import settings
 from django.conf.urls.static import static
-
+from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('coruna/',include('corunaApp.urls')),
-    path('',RedirectView.as_view(url='coruna/')),
+    path('org/',include('orgApp.urls')),
+    path('coruna/',include('corunaApp.urls'),name='coruna'),
+    path('',RedirectView.as_view(url='org/')),
     
 ]+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 
