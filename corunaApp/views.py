@@ -64,7 +64,7 @@ class PostView(ListView):
         return context
     
 def koronaInfo():
-    response = requests.get("https://corona.lmao.ninja/countries?fbclid=IwAR361IpY2mbXU7twwKwwiYX3u6vMiDj3IGzgtNIFQhC0pI0UzaTS_Hq1Gh4")
+    response = requests.get("https://corona.lmao.ninja/v2/countries")
     data = response.json() 
     return data
     

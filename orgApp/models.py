@@ -1,5 +1,5 @@
 from django.db import models
-from userApp import UserProfile
+from userApp.models import UserProfile
 
 
 class Category(models.Model):
@@ -18,7 +18,7 @@ class Category(models.Model):
 class Organisation(models.Model):
     owner = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     about = models.TextField()
-    org_category = models.ForeignKey(Category, verbose_name="Category")
+    org_category = models.ForeignKey(Category, verbose_name="Category", on_delete=models.CASCADE)
     division = models.CharField(max_length=255)
     district = models.CharField(max_length=255)
     thana = models.CharField(max_length=255)
@@ -28,11 +28,13 @@ class Organisation(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
+    objects = models.QuerySet()
+
     def __str__(self):
         return self.owner
 
 class orgDetail(models.Model):
-    org_id = models.ForeignKey(Organisation, on_delete=models.CASCADE)
+    org_id = models.OneToOneField(Organisation, on_delete=models.CASCADE)
     image = models.ImageField()
     logo = models.ImageField()
     description = models.TextField()
@@ -48,7 +50,7 @@ class orgDetail(models.Model):
 
 class orgProject(models.Model):
     name = models.CharField(max_length=255)
-    area = models.ForeignKey(Organisation)
+    area = models.ForeignKey(Organisation, on_delete=models.CASCADE)
     details = models.TextField()
     duration = models.DateTimeField()
     image = models.ImageField()
@@ -56,6 +58,9 @@ class orgProject(models.Model):
     status = models.TextField(verbose_name="Status")
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
 
 
 

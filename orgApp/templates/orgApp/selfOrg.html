@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if new %}
+        {% if errorMsg %}<p>{{ errorMsg }}</p>{% endif %}
+        {% if orgForm %}
+            <form action="{% url 'orgApplication:self_org' %}" method="post">
+                {% csrf_token %}
+                {{ orgForm.as_p }}
+                <input type="submit" value="Submit">
+            </form>
+        {% endif %}
+    {% else %}
+        <p>Old user</p>
+    {% endif %}
+
+{% endblock %}
