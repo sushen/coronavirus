@@ -34,7 +34,7 @@ SECRET_KEY = '2*ky6&fzf&(1ys1g=hzoz8w!^v)z7ig4td$1@qdvz^(#eigb9o'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['coronavirus1314.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 
