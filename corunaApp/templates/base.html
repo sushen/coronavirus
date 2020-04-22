@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>করোনা ভাইরাস</title>
-    <link rel = "icon" href ="{% static 'corunaApp/images/coron-logo.png' %}" type = "image/x-icon">
-   
-    
-     <!-- Compiled and minified CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>করোনা ভাইরাস</title>
+  <link rel="icon" href="{% static 'corunaApp/images/coron-logo.png' %}" type="image/x-icon">
 
-     <!-- Compiled and minified JavaScript -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-             
 
-    <link rel="stylesheet" href="{% static  'corunaApp/css/main.css' %} " />
-    <link rel="stylesheet" href="{% static  'corunaApp/css/news.css' %} " />
-    <noscript><link rel="stylesheet" href="{% static 'corunaApp/css/noscript.css' %}" /></noscript>
-    
-     
-             
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+  <link rel="stylesheet" href="{% static  'corunaApp/css/main.css' %} " />
+  <link rel="stylesheet" href="{% static  'corunaApp/css/news.css' %} " />
+  <link rel="stylesheet" href="{% static  'css/animate.css' %} " />
+  <noscript>
+    <link rel="stylesheet" href="{% static 'corunaApp/css/noscript.css' %}" /></noscript>
+
+
+
 
 </head>
+
 <body>
 
-            {% include 'messages.html' %}
+  {% include 'messages.html' %}
 
 
-            {% block content %}
+  {% block content %}
 
-            {% endblock %}
-            
+  {% endblock %}
 
-    <!-- Scripts -->
-			<script src="{% static 'corunaApp/js/jquery.min.js' %} "></script>
-			<script src="{% static 'corunaApp/js/browser.min.js' %} "></script>
-			<script src="{% static 'corunaApp/js/breakpoints.min.js' %}"></script>
-			<script src="{% static 'corunaApp/js/util.js' %}"></script>
-            <script src="{% static 'corunaApp/js/main.js' %}"></script>
+  {% block footer %}
 
-           
-            <script>
-             
-                    setTimeout(function(){
-                      if ($('#msg').length > 0) {
-                        $('#msg').remove();
-                      }
-                    }, 2500)
-           
-               
-            </script>
+  {% endblock footer %}
 
 
-           
+  <!-- Scripts -->
+  <script src="{% static 'corunaApp/js/jquery.min.js' %} "></script>
+  <script src="{% static 'corunaApp/js/browser.min.js' %} "></script>
+  <script src="{% static 'corunaApp/js/breakpoints.min.js' %}"></script>
+  <script src="{% static 'corunaApp/js/util.js' %}"></script>
+  <script src="{% static 'corunaApp/js/main.js' %}"></script>
+
+
+  <script>
+    setTimeout(function () {
+      if ($('#msg').length > 0) {
+        $('#msg').remove();
+      }
+    }, 2500)
+  </script>
+
+
+
 
 </body>
 
 </html>
-

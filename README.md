@@ -56,6 +56,22 @@ https://github.com/kmrul/coronavirus
 Apps:
 https://coronaproject.herokuapp.com/coruna/
 
+Name: Md. Nahidur Rahman
+
+Repo:
+https://github.com/nahidsaikat/coronavirus
+Apps:
+https://corona-virus-100.herokuapp.com/coruna/
+
+
+
+Name : Asaduzzaman Sohel
+
+Repo:
+https://github.com/asadlive84/coronavirus
+Apps:
+https://coronovirus19.herokuapp.com/coruna/
+
 
 
 

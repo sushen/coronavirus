@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base_temp.html' %}
 
 {% load crispy_forms_tags %}
 
@@ -6,24 +6,26 @@
 
 {% block content %}
 
-<div class=" ">
+<div style="background: rgba(21,21,21,.9); padding:0px;">
+    
+
 
 	<!-- Wrapper -->
-	<div id="wrapper">
+	<div id="wrapper" style="height: 90%;">
 
 		<!-- Header -->
-		<header id="header">
-			<div class="">
-				{% load static %}
-				<img src="{% static 'corunaApp/images/coron-logo.png' %}" class="logo" alt="Corona>
+		<header id="header"  >
+			<div class="" >
+				
+				<img src="{% static 'corunaApp/images/coron-logo.png' %}" class="logo" alt="Corona" />
 			</div>
 			<div class="content" style="font-family: 'SolaimanLipi' !important;">
 				<div class="inner">
-					<h1>করোনা ১৯</h1>
-					<span style="font-size:18px;font-family: 'SolaimanLipi' !important;">ঘরে থাকুন , সুস্থ থাকুন</span>
+					<h1>কোভিড-১৯</h1>
+					<span style="font-size:18px;font-family: 'SolaimanLipi' !important;">করোনা মোকাবিলার জন্য এটা ওপেন সোর্স প্রজেক্ট । <br> আপনারা যে কেউ যে কোন সময় আমাদের প্রজেক্টে অংশগ্রহন করতে পারেন</span>
 				</div>
 			</div>
-			<nav class="" style="background-color:  #1b1f22;width:100%;height:100%;">
+			<nav class="" style="background-color:rgba(21,21,21,.9);width:100%;height:90%;">
 				<ul>
 					<li><a style="font-size:16px" href="#intro">করোনা কি</a></li>
 					<li><a style="font-size:16px" href="{% url 'news' %}#news">করোনা সংবাদ</a></li>
@@ -69,9 +71,10 @@
 
 				<div class="row" style="">
 					<div class="col s12 m4">
-						<div class="card blue-grey darken-4">
+						<h2 class="" style="color:orange">বাংলাদেশের বর্তমান করোনার অবস্থা </h2>
+						<div class="card bg-dark">
 							<div class="card-content white-text">
-								<span class="card-title orange-text">বাংলাদেশের বর্তমান করোনার অবস্থা </span>
+								
 
 								<table>
 
@@ -96,11 +99,11 @@
 											<td>{{data.todayDeaths}}</td>
 
 										</tr>
-										{% comment %} <tr>
+										 <tr>
 											<th>আজকের আক্রান্ত সংখ্যা</th>
 											<td>{{data.todayCases}}</td>
 
-										</tr> {% endcomment %}
+										</tr> 
 
 										<tr>
 											<th>সর্বমোট মারা গেছেন</th>
@@ -188,6 +191,30 @@
 				</div>
 
 				<h2 class="major" style="margin-top:10px">করোনা সংবাদ</h2>
+
+				<div style="height:500px ; background:white; margin-bottom:40px">
+					<center><h2 class="black_text">World News</h2></center>
+					<div class="col s12 m8 " style="height: 440px; overflow: scroll">
+						<table>
+							<tbody>
+								{% if world_news %}
+									{% for data in world_news %}
+									<tr class="row_separator">
+										<td class="black_text">
+											<span>{{ data.publishedAt }}</span>
+											<p><a href="{{ data.url }}">
+												{{data.title}}
+											</a></p>
+										</td>
+									</tr>
+									{% endfor %}
+								{% else %}
+									<p>none</p>
+								{% endif %}
+							</tbody>
+						</table>
+					</div>
+				</div>
 
 				<div style="height:500px ; background:white">
 					<center>
@@ -314,11 +341,11 @@
 				<span class="image main"><img src="{% static 'corunaApp/images/pic02.jpg' %}" alt="" /></span>
 				<p>
 					এক দল কম্পিউটার প্রোগ্রামার ভলান্টিয়ার যারা এইটি ওপেন সোর্স প্রজেক্ট করছি করোনা মোকাবিলার জন্য
-					প্রয়োজনীয় প্রজুক্তি তৈরী করাই আমাদের কাজ । আমরা উন্মুক্ত পদ্ধতিতে কাজ করি । যে কেউ যে কোন সময়
+					প্রয়োজনীয় প্রযুক্তি তৈরী করাই আমাদের কাজ । আমরা উন্মুক্ত পদ্ধতিতে কাজ করি । যে কেউ যে কোন সময়
 					আমাদের প্রজেক্টে অংশগ্রহন করতে পারেন । যে কেউ যে কোন কাজে আমাদের এই প্রজেক্টের সমস্ত উপাদান
-					ব্যাবহার করতে পারেন । আমাদের সাথে গিটহাবে যোগায়োগ কোরতে পারেন অথবা আমাদের সামাজিক মাধ্যমগুলোর
-					সাহায্যে আমাদের সাথে যোগযোগ করতে পারেন ।
-					এই প্রজেক্টটি সম্পুর্ন সেচ্ছা শ্রমে করা ।
+					ব্যাবহার করতে পারেন । আমাদের সাথে গিটহাবে যোগায়োগ করতে পারেন অথবা আমাদের সামাজিক মাধ্যমগুলোর
+					সাহায্যে আমাদের সাথে যোগাযোগ করতে পারেন ।
+					এই প্রজেক্টটি সম্পুর্ন স্বেচ্ছা শ্রমে করা ।
 
 
 				</p>
@@ -373,6 +400,22 @@
 						<li><a href="https://www.youtube.com/playlist?list=PLSQ_pVMGfBaPipBOXnCze267aS8EPxe8_" target="_blank" class="icon brands fa-youtube"><span class="label">Youtube</span></a></li>
 						<li><a href="https://github.com/sushen/coronavirus" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 				</ul>
+			</article>
+
+			{% comment %} login {% endcomment %}
+
+			<article id="login">
+				<h2 class="major">Login</h2>
+				 <div class="row">
+					<div class="input-field col s12">
+						<label for="email">Email</label>
+						<input id="email" type="email" class="validate">
+					
+						<button class="btn waves-effect waves-light" id='login-btn' type="button" name="login-btn" onclick="signin()">Login
+						</button>	
+
+					</div>
+				</div>
 			</article>
 
 			<!-- Elements -->
@@ -638,5 +681,15 @@
 
 
 </div>
+
+	 <!-- coruna app script file -->
+    <!-- Scripts -->
+	<script src="{% static 'corunaApp/js/jquery.min.js' %} "></script>
+	<script src="{% static 'corunaApp/js/browser.min.js' %} "></script>
+	<script src="{% static 'corunaApp/js/breakpoints.min.js' %}"></script>
+	<script src="{% static 'corunaApp/js/util.js' %}"></script>
+	<script src="{% static 'corunaApp/js/main.js' %}"></script>
+  
+	  <!-- coruna app script end -->
 
 {% endblock %}

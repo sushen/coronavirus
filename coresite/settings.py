@@ -11,16 +11,16 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
+#import django_heroku
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
-STATIC_DIR = os.path.join(BASE_DIR,'static')
-MEDIA_DIR = os.path.join(BASE_DIR,'media')
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 
 # STATIC_DIR = os.path.join(BASE_DIR,'static')
@@ -33,7 +33,7 @@ SECRET_KEY = '2*ky6&fzf&(1ys1g=hzoz8w!^v)z7ig4td$1@qdvz^(#eigb9o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['coronavirus-stagibg.herokuapp.com', 'coronavirus1314.herokuapp.com', 'coronovirus19.herokuapp.com', 'coronaproject.herokuapp.com', 'coronavirusbd.herokuapp.com','corunavirus19.herokuapp.com']
 
 
 # Application definition
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corunaApp',
     'crispy_forms',
+    'userApp.apps.UserappConfig',  # User Application for User Handle
 ]
 
 
@@ -68,7 +69,7 @@ ROOT_URLCONF = 'coresite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -149,7 +150,7 @@ MEDIA_URL = '/media/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
@@ -169,3 +170,4 @@ MESSAGE_LEVEL = 25
 
 
 
+AUTH_USER_MODEL = "userApp.UserProfile"
